@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
+    <meta name="description" content="Online Number Systems(binary,hexadecimal,decimal,octal) Converter and Calculator,Easy to use,Acurate,Fast calculation">
+
+    <meta name="keywords" content="Online Converter, online calculator, number system,Computer Science, data structure, binary to decimal, binary to octal, binary to hexadecimal, decimal to binary, decimal to hexadecimal, decimal to octal, octal to binary, octal to decimal, octal to hexadecimal, hexadecimal to binary, hexadecimal to decimal, hexadecimal to octal">
+
+    <link rel="stylesheet" href="main.css">
+
+    <script type="text/javascript" src="numsyscal.js"></script>
+</head>
+<body>
+    <div class="div Main_Container">
+    <div class="div Result">
+            <input type="text" id="Output" placeholder="Enter number">
+        </div>
+    
+        <div class="div div_ConvertFrom" id="ConvertFrom">
+                <table class="ConvertfromTable">
+                        <tr>
+                            <td></td>
+                            <td><button class="Binbtn" type="button" onclick="Show('BinPad','ConvertFrom')">Bin</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="Binbtn" type="button" onclick="Show('Hexpad','ConvertFrom')">Hex</button></td>
+                            <td></td>
+                            <td><button class="Binbtn" type="button" onclick="Show('NumPad','ConvertFrom')">Dec</button></td>
+                            </tr>
+                        <tr>
+                            <td></td>
+                            <td><button class="Binbtn" type="button" onclick="Show('OctPad','ConvertFrom')">Oct</button></td>
+                            </tr>
+                            </table>
+                <button class="WeatherBtn" type="button" onclick="Show('WeatherPad','ConvertFrom')">weather</button>
+        </div>
+    <div class="div div_WeatherPad" id="WeatherPad">
+           <div class="Temperature" id="_Temperature">
+            <h2 id="temperature">0</h2>
+            <h2 id="celsius">&degC</h2>
+            <h2 id="temp-divider">/</h2>
+            <h2 id="fahrenheit">&degF</h2>
+            </div>
+            <div class="other-info">
+                    <h1 class="city" id="city">Weather Widget App</h1>
+                    <h1 id="day">Day</h1>
+                    <h1 id="date">Day Month Year</h1>
+                    <h1 id="weather-status">Weather / Weather Status</h1>
+                </div>
+            <div class="other-details">
+             <div class="other-details-keys">  
+                <p>Wind Speed</p>
+                <p>Humidity</p>
+                <p>Pressure</p>
+                <p>Sunrise Time</p>
+                <p>Sunset Time</p>
+            </div>
+            <div class="other-details-values">
+                <p id="windspeed">0 Km/h</p>
+                <p id="humidity">0 %</p>
+                <p id="pressure">0 hPa</p>
+                <p id="sunrise-time">0:00 am</p>
+                <p id="sunset-time">0:00 pm</p>
+            </div>
+            </div>
+         
+    </div>
+    <div class="div div_NumPad" id="NumPad">
+        <table class="Num_table">
+            <tr>
+                <td><button class="DecBtn" type="button" onclick="EnterNum('1')"  value="1"> 1 </button></td>
+                <td><button class="DecBtn" type="button" onclick="EnterNum('2')" value="2"> 2 </button></td>
+                <td><button class="DecBtn" type="button" onclick="EnterNum('3')" value="3"> 3 </button></td>
+            </tr>
+            <tr>
+                <td><button class="DecBtn" type="button" onclick="EnterNum('4')"   value="4"> 4 </button></td>
+                <td><button class="DecBtn" type="button" onclick="EnterNum('5')"   value="5"> 5 </button></td>
+                <td><button class="DecBtn" type="button" onclick="EnterNum('6')"   value="6"> 6 </button></td>
+            </tr>
+            <tr>
+                <td><button class="DecBtn" type="button" onclick="EnterNum('7')"   value="7"> 7 </button></td>
+                <td><button class="DecBtn" type="button" onclick="EnterNum('8')"   value="8"> 8 </button></td>
+                <td><button class="DecBtn" type="button" onclick="EnterNum('9')"   value="9"> 9 </button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button class ="DecBtn" type="button" onclick="EnterNum('0')" id="num" value="0"> 0 </button></td>
+            </tr>
+        </table>
+    </div>
+    <div class="div div_BinPad" id="BinPad">
+        <table class="Num_table" cellspacing="25">
+            <tr>
+                <td><button class="button ZeroOne"type="button" onclick="EnterNum('1')" value="1">1</button></td>
+                <td><button class="button ZeroOne" type="button" onclick="EnterNum('0')" value="0">0</button></td>
+            </tr>
+        </table>
+    </div>
+    <div class="div div_HexPad" id="Hexpad">
+        <table class="Num_table" cellspacing="10">
+            <tr>
+                <td><button class="HexBtn" type="button" onclick="EnterNum('1')" id="hex" value="1"> 1 </button></td>
+                <td><button class="HexBtn" type="button" onclick="EnterNum('2')" id="hex" value="2"> 2 </button></td>
+                <td><button class="HexBtn" type="button" onclick="EnterNum('3')" id="hex" value="3"> 3 </button></td>
+                <td><button class="HexBtn" type="button" onclick="EnterNum('4')" id="hex" value="4"> 4 </button></td>
+            </tr>
+            <tr>
+                <td><button class="HexBtn" type="button" onclick="EnterNum('5')" id="hex" value="5"> 5 </button></td>
+                <td><button class="HexBtn" type="button" onclick="EnterNum('6')" id="hex" value="6"> 6 </button></td>
+                <td><button class="HexBtn" type="button" onclick="EnterNum('7')" id="hex" value="7"> 7 </button></td>
+                <td><button class="HexBtn" type="button" onclick="EnterNum('8')" id="hex" value="8"> 8 </button></td>
+            </tr>
+            <tr>
+                <td><button class="HexBtn" type="button" onclick="EnterNum('9')" id="hex" value="9"> 9 </button></td>
+                <td><button class ="HexBtn" type="button" onclick="EnterNum('0')" id="num" value="0"> 0 </button></td>
+                <td><button class="HexBtn" type="button" onclick="EnterNum('A')" id="hex" value="A"> A </button></td>
+                <td><button class="HexBtn" type="button" onclick="EnterNum('B')" id="hex" value="B"> B </button></td>
+            </tr>
+            <tr>
+                <td><button class="HexBtn" type="button" onclick="EnterNum('C')" id="hex" value="C"> C </button></td>
+                <td><button class="HexBtn" type="button" onclick="EnterNum('D')" id="hex" value="D"> D </button></td>
+                <td><button class="HexBtn" type="button" onclick="EnterNum('E')" id="hex" value="E"> E </button></td>
+                <td><button class="HexBtn" type="button" onclick="EnterNum('F')" id="hex" value="F"> F </button></td>
+            </tr>
+        </table>
+    </div>
+    <div class="div div_OctPad" id="OctPad">
+            <table class="Num_table" cellspacing="10">
+                <tr>
+                    <td><button class="DecBtn" type="button" onclick="EnterNum('1')"  id="num" value="1"> 1 </button></td>
+                    <td><button class="DecBtn" type="button" onclick="EnterNum('2')"   id="num" value="2"> 2 </button></td>
+                    <td><button class="DecBtn" type="button" onclick="EnterNum('3')"   id="num" value="3"> 3 </button></td>
+                </tr>
+                <tr>
+                    <td><button class="DecBtn" type="button" onclick="EnterNum('4')"   id="num" value="4"> 4 </button></td>
+                    <td><button class="DecBtn" type="button" onclick="EnterNum('5')"   id="num" value="5"> 5 </button></td>
+                    <td><button class="DecBtn" type="button" onclick="EnterNum('6')"   id="num" value="6"> 6 </button></td>
+                </tr>
+                <tr>
+                    <td><button class="DecBtn" type="button" onclick="EnterNum('7')"   id="num" value="7"> 7 </button></td>
+                    <td><button class ="DecBtn" type="button" onclick="EnterNum('0')" id="num" value="0"> 0 </button></td>
+                </tr>
+                <tr>
+                   
+                </tr>
+            </table>
+        </div>
+        <div class="div_Optr_table">
+            <button class="button Optrs" type="button" onclick="EnterNum('+')" id="Add" value="Add">+</button>
+            <button class="button Optrs" type="button" onclick="EnterNum('-')" id="Sub" value="sub">-</button>
+            <button class="button Optrs" type="button" onclick="EnterNum('*')" id="mul" value="mul">X</button>
+            <button class="button Optrs" type="button" onclick="EnterNum('/')" id="_div" value="_div">/</button>
+            <button class="button Optrs" type="button" onclick="Arithemaics()" id="equals" value="equals">=</button>
+            <button class="button Optrs" onclick="Clear()" type="button" id="Clear" value="Clear">Clr</button>
+            <button class="button Optrs" onclick="leftbinary()" type="button"> << </button>
+            <button class="button Optrs" onclick="rightbinary()" type="button"> >> </button>
+            <button class="button Optrs" onclick="del()" type="button" id="Todelete">&nbsp del &nbsp</button>
+    </div> 
+        <div class="div div_ConvertTo" id="ConvertTo">
+                <button class="button Back" onclick="Show('ConvertFrom','NumPad')" type="button" id="Toback">Back</button>
+                <table class="ConvertToTable">
+                    <tr>
+                        <td></td>
+                        <td><button class="Binbtn" type="button" onclick="Convert('Bin')">Bin</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="Binbtn" type="button" onclick="Convert('Hex')">Hex</button></td>
+                        <td></td>
+                        <td><button class="Binbtn" type="button" onclick="Convert('Dec')">Dec</button></td>
+                        </tr>
+                    <tr>
+                        <td></td>
+                        <td><button class="Binbtn" type="button" onclick="Convert('Oct','ConvertFrom')">Oct</button></td>
+                        </tr>
+                        </table>
+                </table>
+        </div>
+        
+        <!-- <div class="div NoteBox">
+            <p style="margin-left:10px;font-size:24px;">
+                Note...
+                <br>For Hexadecimal, Binary and Octal numbers Enter digits from left to right<br>
+                Ex.<br>
+                binary number 100110<br>
+                &nbsp &nbsp &nbsp &nbsp &#8592
+             </p>
+        </div> -->
+</div>
+</body>
+</html>
